@@ -28,21 +28,23 @@ nvcc_flags = []
 if IS_WINDOWS:
     # Required for MSVC + nvcc + torch headers
     cxx_flags += [
-        "/O2",
         "/std:c++17",
         "/EHsc", 
         "/permissive-", 
-        "/Zc:__cplusplus"
+        "/Zc:__cplusplus", 
+        "/Zc:preprocessor",
     ]
     nvcc_flags += [
         "-O3",
-        "-std=c++17",
         "--expt-relaxed-constexpr",
         "--extended-lambda",
+        "-std=c++20",
         "-Xcompiler=/std:c++17",
         "-Xcompiler=/EHsc", 
         "-Xcompiler=/permissive-", 
-        "-Xcompiler=/Zc:__cplusplus"
+        "-Xcompiler=/Zc:__cplusplus",
+        "-Xcompiler=/Zc:preprocessor",
+        "-allow-unsupported-compiler",
     ]
 else:
     cxx_flags += [
