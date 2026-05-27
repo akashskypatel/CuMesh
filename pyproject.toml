@@ -2,10 +2,8 @@
 requires = [
     "setuptools>=64",
     "wheel",
-    "torch",
 ]
 build-backend = "setuptools.build_meta"
-
 
 [project]
 name = "cumesh"
@@ -18,6 +16,5 @@ authors = [
     { name = "Jianfeng Xiang", email = "belljig@outlook.com" }
 ]
 dependencies = [
-    "torch>=2.4.0",
     "tqdm",
 ]
